@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from "react";
+import { ReactSortable } from "react-sortablejs";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface ItemType {
+    id: number;
+    name: string;
 }
 
-export default App;
+export default function App(props: any) {
+    const [list1, setList1] = useState<ItemType[]>([
+        { id: 1, name: "HM" },
+        { id: 2, name: "BWL 1" },
+        { id: 3, name: "BWL 2" },
+        { id: 4, name: "DBS" },
+        { id: 5, name: "ProSeminar" },
+    ]);
+
+
+    const [list2, setList2] = useState<ItemType[]>([
+        { id: 6, name: "Numerik" },
+        { id: 7, name: "MMI" },
+        { id: 8, name: "WT" },
+        { id: 9, name: "Rest" },
+    ]);
+
+    return (
+        <main>
+
+            <div className="column">
+                <ReactSortable list={list1} setList={setList1} group="shared-group-name">
+                    {list1.map((item) => (
+                        <div className="listItem" key={item.id}>{item.name}</div>
+                    ))}
+                </ReactSortable>
+
+            </div>
+            <div className="column">
+                <ReactSortable list={list2} setList={setList2} group="shared-group-name">
+                    {list2.map((item) => (
+                        <div className="listItem" key={item.id}>{item.name}</div>
+                    ))}
+                </ReactSortable>
+            </div>
+
+        </main>
+
+    );
+};
