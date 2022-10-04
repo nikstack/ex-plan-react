@@ -7,7 +7,8 @@ interface ItemType {
     name: string;
 }
 
-export default function App(props: any) {
+export default function App() {
+
     const [list1, setList1] = useState<ItemType[]>([
         { id: 1, name: "HM" },
         { id: 2, name: "BWL 1" },
@@ -26,7 +27,6 @@ export default function App(props: any) {
 
     return (
         <main>
-
             <div className="column">
                 <ReactSortable list={list1} setList={setList1} group="shared-group-name">
                     {list1.map((item) => (
@@ -42,8 +42,6 @@ export default function App(props: any) {
                     ))}
                 </ReactSortable>
             </div>
-
         </main>
-
     );
 };

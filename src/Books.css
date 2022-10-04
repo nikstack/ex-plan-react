@@ -1,0 +1,26 @@
+main {
+    max-width: 720px;
+    margin: auto;
+    padding: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    min-width: 96px;
+}
+
+button {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background: white;
+    padding: 8px;
+
+}
+
+input:focus, button:focus {
+    border-color: hsl(202, 100%, 50%);
+}
