@@ -85,12 +85,24 @@ export default function Books() {
                 </div>
             </form>
 
-            <ul>
-                {books.map(book => (
-                    <li key={book.id} onClick={() => setEditBook(book)}>
-                        {book.title} ({book.pageCount} Seiten)
-                    </li>))}
-            </ul>
+            <div className="tableContainer">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th style={{width: '80%'}}>Titel</th>
+                        <th>Seiten</th>
+                    </tr>
+                    {books.map(book => (
+                        <tr key={book.id} onClick={() => setEditBook(book)}>
+                            <td>{book.title}</td>
+                            <td>{book.pageCount}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+
+                </table>
+
+            </div>
 
             {/*<div className="column">
                 <ReactSortable list={list1} setList={setList1} group="shared-group-name">

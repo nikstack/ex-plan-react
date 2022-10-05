@@ -8,13 +8,13 @@ input {
     width: 100%;
     padding: 8px;
     border-radius: 8px;
-    border: 1px solid lightgray;
+    border: 1px solid hsl(0, 0%, 90%);
     font-size: 16px;
     min-width: 96px;
 }
 
 button {
-    border: 1px solid lightgray;
+    border: 1px solid hsl(0, 0%, 90%);
     border-radius: 8px;
     background: white;
     padding: 8px;
@@ -22,5 +22,29 @@ button {
 }
 
 input:focus, button:focus {
-    border-color: hsl(202, 100%, 50%);
+    border-color: hsl(200, 100%, 50%);
+}
+
+div.tableContainer {
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 8px;
+    overflow: hidden;
+
+    margin-top: 8px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: hsl(0, 0%, 90%);
 }
